@@ -20,6 +20,9 @@ for (( i=0; i<${#files[@]} ; i+=2 )) ; do
     mkdir "${files[i]}.${files[i+1]}.BWA"    
 done 
 
+GenomeDir='~/reference_genomes/hg19/'
+GenomeFasta='~/reference_genomes/hg19/hg19.fa'
+
 files=(*fastq.gz)
 for (( i=0; i<${#files[@]} ; i+=2 )) ; do
 
