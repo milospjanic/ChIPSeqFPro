@@ -78,6 +78,17 @@ bwa index -a bwtsw hg19.fa
 bwa index -a bwtsw mm10.fa
 </pre>
 
+**Running**
+
+After placing fastq.gz files in the working folder run the script that is suitable for your experiment, e.g: 
+
+<pre>
+chmod 755 ChIPSeqFPro.PE.hg19.sh
+./rnaSeqFPro.PE.hg19.sh 64
+</pre>
+
+The number indicates number of cores you want to allocate for the analysis.
+
 **Don't forget to place the FastQC folder into the working folder! These are the only requirment neccesary to be in the working directory, in addition to the fastqc.gz files**
 
 **Dont forget that reference genome needs to be in your ~/reference_genomes folder, in case you switch to another user account script may not work because it searches for ~/reference_genomes folder.**
