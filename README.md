@@ -49,3 +49,31 @@ wget --timestamping
         -O mm10.2bit 	
 ./twoBitToFa mm10.2bit mm10.fa
 </pre>
+
+**Install BWA***
+
+<pre>
+#Download to your ~ folder the latest version from http://sourceforge.net/projects/bio-bwa/files/
+bunzip2 bwa-0.7.15.tar.bz2 
+tar xvf bwa-0.7.15.tar
+cd bwa-0.7.15
+make
+
+#edit ~/.bashrc to add bwa to your PATH 
+nano ~/.bashrc
+export PATH=$PATH:~/bwa-0.7.15
+source ~/.bashrc
+#test the installation
+bwa
+</pre>
+
+**Indexing the reference genome with BWA**
+
+Use BWA to index the reference genome, use number of core on your machine, e.g. 64.
+<pre>
+cd ~/reference_genomes
+#for human genome
+bwa index -a bwtsw hg19.fa
+#for mouse genome
+bwa index -a bwtsw mm10.fa
+</pre>
