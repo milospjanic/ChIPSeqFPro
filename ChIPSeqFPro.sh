@@ -22,21 +22,32 @@ done
 
 GenomeDir='~/reference_genomes/hg19/'
 GenomeFasta='~/reference_genomes/hg19/hg19.fa'
+mkdir STATS
 
 files=(*fastq.gz)
 for (( i=0; i<${#files[@]} ; i+=2 )) ; do
 
 echo $(pwd)/${files[i]} $(pwd)/${files[i+1]}
 Reads="$(pwd)/"${files[i]}" $(pwd)/"${files[i+1]}" 
+Cores=$1
 
 echo $Reads
 
 cat >> commands.2.${files[i]}.${files[i+1]}.tmp <<EOL
     #!/bin/bash
     echo Proccessing `pwd`: ${files[i]} ${files[i+1]}
-    # enter the correct folder
-	  cd ${files[i]}.${files[i+1]}.STAR
-    # run bwa
+    
+    # run bwa mem
+    bwa mem -M -t $Cores $GenomeFasta $Reads > ${files[i]}.${files[i+1]}.sam
+    
+    # run samtools to convert sam to bam
+    samtools view -Sb ${files[i]}.${files[i+1]}.sam > ${files[i]}.${files[i+1]}.bam
+    
+    # get stats on bam files
+    samtools flagstat ${files[i]}.${files[i+1]}.bam > ./STATS/${files[i]}.${files[i+1]}.flagstats
+    
+    #convert bam to bigwig
+    ./bam2bigwig.sh ${files[i]}.${files[i+1]}.bam
     
     cd ..
 
@@ -45,14 +56,16 @@ EOL
   
 files=(*fastq.gz)
 for (( i=0; i<${#files[@]} ; i+=2 )) ; do
-    sed -i "8i\\\tcd ${files[i]}.${files[i+1]}.STAR" commands.2.${files[i]}.${files[i+1]}.tmp
+    sed -i "3i\\\tcd ${files[i]}.${files[i+1]}.BWA" commands.2.${files[i]}.${files[i+1]}.tmp
+    sed -i "4i\\\t# enter the correct folder" commands.2.${files[i]}.${files[i+1]}.tmp
 done
 
 for (( i=0; i<${#files[@]} ; i+=2 )) ; do
-    sed -i "2i\ Reads=\"`pwd`/${files[i]} `pwd`/${files[i+1]} --readFilesCommand zcat\"" commands.2.${files[i]}.${files[i+1]}.tmp
+    sed -i "2i\ Reads=\"`pwd`/${files[i]} `pwd`/${files[i+1]} \"" commands.2.${files[i]}.${files[i+1]}.tmp
 done
 
 for (( i=0; i<${#files[@]} ; i+=2 )) ; do
     source commands.2.${files[i]}.${files[i+1]}.tmp
 done
 
+rm *tmp
