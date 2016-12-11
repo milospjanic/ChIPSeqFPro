@@ -78,6 +78,12 @@ bwa index -a bwtsw hg19.fa
 bwa index -a bwtsw mm10.fa
 </pre>
 
+**Download bam2bigwig**
+<pre>
+wget https://raw.githubusercontent.com/milospjanic/bam2bigwig/master/bam2bigwig.sh
+chmod 775 bam2bigwig
+</pre>
+
 **Running**
 
 ChIPSeqFPro is composed of four pipelines that will run on either human genome hg19 or mouse genome mm10, using either paired-end (PE) or single-read (SR) sequences. 
