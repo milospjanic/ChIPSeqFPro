@@ -77,3 +77,7 @@ bwa index -a bwtsw hg19.fa
 #for mouse genome
 bwa index -a bwtsw mm10.fa
 </pre>
+
+**Don't forget to place the FastQC folder into the working folder! These are the only requirment neccesary to be in the working directory, in addition to the fastqc.gz files**
+
+**Dont forget that reference genome needs to be in your ~/reference_genomes folder, in case you switch to another user account script may not work because it searches for ~/reference_genomes folder.**
