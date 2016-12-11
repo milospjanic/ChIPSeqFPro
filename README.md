@@ -80,11 +80,20 @@ bwa index -a bwtsw mm10.fa
 
 **Running**
 
+ChIPSeqFPro is composed of four pipelines that will run on either human genome hg19 or mouse genome mm10, using either paired-end (PE) or single-read (SR) sequences. 
+
+<pre>
+ChIPSeqFPro.PE.hg19.sh
+ChIPSeqFPro.PE.mm10.sh
+ChIPSeqFPro.SR.hg19.sh
+ChIPSeqFPro.SR.mm10.sh
+</pre>
+
 After placing fastq.gz files in the working folder run the script that is suitable for your experiment, e.g: 
 
 <pre>
 chmod 755 ChIPSeqFPro.PE.hg19.sh
-./rnaSeqFPro.PE.hg19.sh 64
+./ChIPSeqFPro.PE.hg19.sh 64
 </pre>
 
 The number indicates number of cores you want to allocate for the analysis.
