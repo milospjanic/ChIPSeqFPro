@@ -32,7 +32,7 @@ cd ~/reference_genomes
 mkdir hg19
 cd hg19
 wget --timestamping 
-        'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit ' 
+        'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit' 
         -O hg19.2bit 
 wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa
 chmod 755 twoBitToFa
@@ -45,7 +45,7 @@ For the mouse genome:
 mkdir mm10
 cd mm10
 wget --timestamping 
-        ' http://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/mm10.2bit' 
+        'http://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/mm10.2bit' 
         -O mm10.2bit 	
 ./twoBitToFa mm10.2bit mm10.fa
 </pre>
