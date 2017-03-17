@@ -51,7 +51,6 @@ cat >> commands.2.${files[i]}.${files[i+1]}.tmp <<EOL
     cd ..
     ./bam2bigwig.sh ${files[i]}.${files[i+1]}.BWA/${files[i]}.${files[i+1]}.bam
     
-    cd ..
 
 EOL
   done
