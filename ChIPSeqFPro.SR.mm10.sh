@@ -48,9 +48,9 @@ cat >> commands.2.${files[i]}.tmp <<EOL
     mv ${files[i]}.flagstats ../STATS/
     
     #convert bam to bigwig
-    ./bam2bigwig.sh ${files[i]}.bam
-    
     cd ..
+    ./bam2bigwig.sh ${files[i]}.BWA/${files[i]}.bam
+    
 
 EOL
   done
