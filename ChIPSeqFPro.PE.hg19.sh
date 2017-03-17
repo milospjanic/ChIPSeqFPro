@@ -44,7 +44,7 @@ cat >> commands.2.${files[i]}.${files[i+1]}.tmp <<EOL
     samtools view -Sb ${files[i]}.${files[i+1]}.sam > ${files[i]}.${files[i+1]}.bam
     
     # get stats on bam files
-    samtools flagstat ${files[i]}.${files[i+1]}.bam > ./STATS/${files[i]}.${files[i+1]}.flagstats
+    samtools flagstat ${files[i]}.${files[i+1]}.bam > ${files[i]}.${files[i+1]}.flagstats
     
     #convert bam to bigwig
     ./bam2bigwig.sh ${files[i]}.${files[i+1]}.bam
