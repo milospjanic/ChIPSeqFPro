@@ -28,7 +28,7 @@ files=(*fastq.gz)
 for (( i=0; i<${#files[@]} ; i+=2 )) ; do
 
 echo $(pwd)/${files[i]} $(pwd)/${files[i+1]}
-Reads="$(pwd)/"${files[i]}" $(pwd)/"${files[i+1]}" 
+Reads="$(pwd)/"${files[i]}" $(pwd)/"${files[i+1]}"" 
 Cores=$1
 
 echo $Reads
