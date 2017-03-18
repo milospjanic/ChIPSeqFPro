@@ -51,7 +51,9 @@ cat >> commands.2.${files[i]}.tmp <<EOL
     cd ..
     ./bam2bigwig.sh ${files[i]}.BWA/${files[i]}.bam
     
-
+    #running MACS2 on bam
+    macs14 -t ${files[i]}.BWA/${files[i]}.bam -g hs -n ${files[i]}.MACS2
+    
 EOL
   done
   
