@@ -50,7 +50,9 @@ cat >> commands.2.${files[i]}.tmp <<EOL
     #convert bam to bigwig
     cd ..
     ./bam2bigwig.mm10.sh ${files[i]}.BWA/${files[i]}.bam
-    
+   
+    #running MACS2 on bam
+    macs2 -t ${files[i]}.BWA/${files[i]}.bam -g mm -n ${files[i]}.MACS2
 
 EOL
   done
