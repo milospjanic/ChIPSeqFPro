@@ -49,7 +49,7 @@ cat >> commands.2.${files[i]}.tmp <<EOL
     
     #convert bam to bigwig
     cd ..
-    ./bam2bigwig.sh ${files[i]}.BWA/${files[i]}.bam
+    ./bam2bigwig.mm10.sh ${files[i]}.BWA/${files[i]}.bam
     
 
 EOL
