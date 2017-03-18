@@ -83,13 +83,13 @@ bwa index -a bwtsw mm10.fa
 For the human genome hg19:
 <pre>
 wget https://raw.githubusercontent.com/milospjanic/bam2bigwig/master/bam2bigwig.sh
-chmod 775 bam2bigwig
+chmod 775 bam2bigwig.sh
 </pre>
 
 For the mouse genome mm10:
 <pre>
 wget https://raw.githubusercontent.com/milospjanic/bam2bigwig/master/bam2bigwig.mm10.sh
-chmod 775 bam2bigwig
+chmod 775 bam2bigwig.mm10.sh
 </pre>
 
 **Running**
