@@ -78,6 +78,13 @@ bwa index -a bwtsw hg19.fa
 bwa index -a bwtsw mm10.fa
 </pre>
 
+**Install MACS2**
+
+Installing MACS through PyPI system.
+<pre>
+pip install MACS2
+</pre>
+
 **Download bam2bigwig**
 
 For the human genome hg19:
