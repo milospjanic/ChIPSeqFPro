@@ -119,6 +119,6 @@ chmod 755 ChIPSeqFPro.PE.hg19.sh
 
 The number indicates number of cores you want to allocate for the analysis.
 
-**Don't forget to place the FastQC folder into the working folder! This is the only requirement necessary to be placed in the working directory, in addition to the fastqc.gz files**
+**Don't forget to place the FastQC folder into the working folder! This is the only requirement necessary to be placed in the working directory, in addition to the fastqc.gz files and bam2bigwig.sh (bam2bigwig.mm10.sh)**
 
 **Dont forget that reference genome needs to be in your ~/reference_genomes folder, in case you switch to another user account script may not work because it searches for ~/reference_genomes folder.**
